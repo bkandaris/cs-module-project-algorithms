@@ -2,10 +2,16 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+import math
+
 def product_of_all_other_numbers(arr):
     # Your code here
-
-    pass
+    answerArray = []
+    for i, num in enumerate(arr):
+        arr.remove(num)
+        answerArray.append(math.prod(arr))
+        arr.insert(i, num)
+    return answerArray
 
 
 if __name__ == '__main__':
